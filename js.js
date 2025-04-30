@@ -16,6 +16,7 @@ function getComputerChoice () {
 getComputerChoice(); //delete
 
 function getHumanChoice () {
-   HumanChoice = prompt ("What is your choice?");
-}
-getHumanChoice();
+    HumanChoice = prompt ("What is your choice?");
+ }
+ getHumanChoice(); //delete
+ console.log(HumanChoice);
