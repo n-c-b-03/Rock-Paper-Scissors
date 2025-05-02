@@ -1,10 +1,8 @@
-let ComputerChoice;
-let HumanChoice;
 let computerScore = 0;
 let humanScore = 0;
 
 function getComputerChoice () {
-    ComputerChoice = Math.random();
+    let ComputerChoice = Math.random();
 
     if (ComputerChoice <= 0.33) {
         console.log("Rock");
@@ -16,20 +14,20 @@ function getComputerChoice () {
 }
 
 function getHumanChoice () {
-    HumanChoice = prompt ("What is your choice?");
+    let HumanChoice = prompt ("What is your choice?");
+    return HumanChoice.toLowerCase();
  }
- // getComputerChoice(); Test
- getHumanChoice();
-//  console.log(HumanChoice); Test
 
 function playRound (HumanChoice, ComputerChoice) {
-    HumanChoice = HumanChoice.toLowerCase();
-    // console.log(HumanChoice); //Test
+    
+
     if (ComputerChoice === "Rock" && HumanChoice === "paper" || ComputerChoice === "Paper" && HumanChoice === "scissors" || ComputerChoice === "Scissors" && HumanChoice === "rock") {
     console.log(`You win! ${HumanChoice} beats ${ComputerChoice}!`);
     } else { 
         console.log(`You lose! ${ComputerChoice} beats ${HumanChoice}!`)
     }
 }
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
 
-playRound(HumanChoice, ComputerChoice); //Test
+playRound(humanSelection, computerSelection); //Test
