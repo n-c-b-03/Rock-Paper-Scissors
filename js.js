@@ -1,5 +1,7 @@
 let ComputerChoice;
 let HumanChoice;
+let computerScore = 0;
+let humanScore = 0;
 
 function getComputerChoice () {
     ComputerChoice = Math.random();
@@ -13,10 +15,15 @@ function getComputerChoice () {
     };
 }
 
-getComputerChoice(); //delete
-
 function getHumanChoice () {
     HumanChoice = prompt ("What is your choice?");
  }
- getHumanChoice(); //delete
- console.log(HumanChoice);
+ // getComputerChoice(); Test
+ getHumanChoice();
+//  console.log(HumanChoice); Test
+
+function playRound (HumanChoice, ComputerChoice) {
+    HumanChoice = HumanChoice.toLowerCase();
+    // console.log(HumanChoice); //Test
+}
+// playRound(HumanChoice, ComputerChoice); //Test
