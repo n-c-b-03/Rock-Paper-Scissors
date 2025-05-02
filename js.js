@@ -25,5 +25,11 @@ function getHumanChoice () {
 function playRound (HumanChoice, ComputerChoice) {
     HumanChoice = HumanChoice.toLowerCase();
     // console.log(HumanChoice); //Test
+    if (ComputerChoice === "Rock" && HumanChoice === "paper" || ComputerChoice === "Paper" && HumanChoice === "scissors" || ComputerChoice === "Scissors" && HumanChoice === "rock") {
+    console.log(`You win! ${HumanChoice} beats ${ComputerChoice}!`);
+    } else { 
+        console.log(`You lose! ${ComputerChoice} beats ${HumanChoice}!`)
+    }
 }
-// playRound(HumanChoice, ComputerChoice); //Test
+
+playRound(HumanChoice, ComputerChoice); //Test
