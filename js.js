@@ -12,10 +12,17 @@ function getComputerChoice () {
 }
 
 function getHumanChoice () {
+
     let HumanChoice = prompt ("What is your choice?"); //prompt asking user for choice
     HumanChoice = HumanChoice.trim();
     HumanChoice = HumanChoice.charAt(0).toUpperCase() + HumanChoice.slice(1).toLowerCase(); //capitalize first letter of HumanChoice and lowercase the rest
-    return HumanChoice; // return result of the function
+
+    if (HumanChoice === "Rock" || HumanChoice === "Paper" || HumanChoice === "Scissors") {
+        return HumanChoice; // return result of the function
+    } else { 
+        return getHumanChoice();
+    }
+
  }
 
  function playGame () {
