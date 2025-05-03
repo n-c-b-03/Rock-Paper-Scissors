@@ -30,7 +30,7 @@ function getHumanChoice () {
             humanScore += 1;
         } else if (ComputerChoice === "Rock" && HumanChoice === "Rock" || ComputerChoice === "Paper" && HumanChoice === "Paper" || ComputerChoice === "Scissors" && HumanChoice === "Scissors") {
             console.log(`Draw between ${ComputerChoice} and ${HumanChoice}!`) 
-            } else { 
+        } else { 
             console.log(`You lose! ${ComputerChoice} beats ${HumanChoice}!`);
             computerScore += 1;
         }
@@ -40,9 +40,16 @@ function getHumanChoice () {
     for (i = 0; i < 5; i++) {
         const humanSelection = getHumanChoice();  
         const computerSelection = getComputerChoice();
-        playRound (humanSelection, computerSelection);
+        playRound(humanSelection, computerSelection);
+    }
+
+    if (computerScore > humanScore) {
+        alert(`Sorry, you lose! ${computerScore} is higher than ${humanScore}.`);
+    } else if (humanScore > computerScore)  {
+        alert(`You won! ${humanScore} is higher than ${computerScore}.`);
+    } else {
+        alert(`It's a draw!`);
     }
 }
-
 
 playGame();
