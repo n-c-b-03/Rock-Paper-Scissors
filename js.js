@@ -20,6 +20,7 @@ function getHumanChoice () {
     if (HumanChoice === "Rock" || HumanChoice === "Paper" || HumanChoice === "Scissors") {
         return HumanChoice; // return result of the function
     } else { 
+        alert("Invalid Choice! Please choose between 'Rock', 'Paper' and 'Scissors'.");
         return getHumanChoice();
     }
 
