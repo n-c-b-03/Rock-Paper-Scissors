@@ -21,6 +21,7 @@ function getHumanChoice () {
  function playGame () {
     let computerScore = 0;
     let humanScore = 0;
+
     /**
      logic for which choice wins over the other:
         */
@@ -37,12 +38,18 @@ function getHumanChoice () {
         console.log("Computer score: " + computerScore + "\n"+ "Human score: " + humanScore);  //Show both the scores 
     }
 
+    /**
+     playing 5 rounds, including calling the getHumanChoice and getComputerChoice function 5 times!
+     */
     for (i = 0; i < 5; i++) {
         const humanSelection = getHumanChoice();  
         const computerSelection = getComputerChoice();
         playRound(humanSelection, computerSelection);
     }
 
+    /**
+     alerting the final result after the 5 rounds
+     */
     if (computerScore > humanScore) {
         alert(`Sorry, you lose! ${computerScore} is higher than ${humanScore}.`);
     } else if (humanScore > computerScore)  {
