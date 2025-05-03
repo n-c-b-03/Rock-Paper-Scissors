@@ -1,6 +1,3 @@
-let computerScore = 0;
-let humanScore = 0;
-
 function getComputerChoice () {
     let ComputerChoice = Math.random(); //get random number between 0 and 1
 
@@ -21,22 +18,31 @@ function getHumanChoice () {
     return HumanChoice; // return result of the function
  }
 
- /**
-   logic for which choice wins over the other:
-    */
-function playRound (HumanChoice, ComputerChoice) { 
-    if (ComputerChoice === "Rock" && HumanChoice === "Paper" || ComputerChoice === "Paper" && HumanChoice === "Scissors" || ComputerChoice === "Scissors" && HumanChoice === "Rock") {
-        console.log(`You win! ${HumanChoice} beats ${ComputerChoice}!`);
-        humanScore += 1;
-    } else if (ComputerChoice === "Rock" && HumanChoice === "Rock" || ComputerChoice === "Paper" && HumanChoice === "Paper" || ComputerChoice === "Scissors" && HumanChoice === "Scissors") {
-        console.log(`Draw between ${ComputerChoice} and ${HumanChoice}!`) 
-        } else { 
-        console.log(`You lose! ${ComputerChoice} beats ${HumanChoice}!`);
-        computerScore += 1;
+ function playGame () {
+    let computerScore = 0;
+    let humanScore = 0;
+    /**
+     logic for which choice wins over the other:
+        */
+    function playRound (HumanChoice, ComputerChoice) { 
+        if (ComputerChoice === "Rock" && HumanChoice === "Paper" || ComputerChoice === "Paper" && HumanChoice === "Scissors" || ComputerChoice === "Scissors" && HumanChoice === "Rock") {
+            console.log(`You win! ${HumanChoice} beats ${ComputerChoice}!`);
+            humanScore += 1;
+        } else if (ComputerChoice === "Rock" && HumanChoice === "Rock" || ComputerChoice === "Paper" && HumanChoice === "Paper" || ComputerChoice === "Scissors" && HumanChoice === "Scissors") {
+            console.log(`Draw between ${ComputerChoice} and ${HumanChoice}!`) 
+            } else { 
+            console.log(`You lose! ${ComputerChoice} beats ${HumanChoice}!`);
+            computerScore += 1;
+        }
+        console.log("Computer score: " + computerScore + "\n"+ "Human score: " + humanScore);  //Show both the scores 
     }
-    console.log("Computer score: " + computerScore + "\n"+ "Human score: " + humanScore);  //Show both the scores 
+
+    for (i = 0; i < 5; i++) {
+        const humanSelection = getHumanChoice();  
+        const computerSelection = getComputerChoice();
+        playRound (humanSelection, computerSelection);
+    }
 }
 
-const humanSelection = getHumanChoice();  
-const computerSelection = getComputerChoice();
-playRound(humanSelection, computerSelection); //uglier, but working alternative: playRound(getHumanChoice, getComputerChoice);
+
+playGame();
