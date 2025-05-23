@@ -20,10 +20,6 @@ function getComputerChoice () {
     };
 }
 
-// rock.addEventListener("click", () => playGame("Rock"));
-// paper.addEventListener("click", () => playGame("Paper"));
-// scissors.addEventListener("click", () => playGame("Scissors"));
-
 
 let computerScore = 0;
 let humanScore = 0;
@@ -35,8 +31,7 @@ function playGame(humanSelection) {
         return;
     }
     const computerSelection = getComputerChoice();
-    console.log(computerSelection);
-
+    
     if (computerSelection === "Rock" && humanSelection === "Paper" || computerSelection === "Paper" && humanSelection === "Scissors" || computerSelection === "Scissors" && humanSelection === "Rock") {
         roundResult.textContent = `You win! ${humanSelection} beats ${computerSelection}!`;
         humanScore += 1;
@@ -61,45 +56,3 @@ function playGame(humanSelection) {
         }
     }
 }
-
-/*
- function playGame () {
-    let computerScore = 0;
-    let humanScore = 0;
-
-    
-     logic for which choice wins over the other:
-      
-    function playRound (HumanChoice, ComputerChoice) { 
-        if (ComputerChoice === "Rock" && HumanChoice === "Paper" || ComputerChoice === "Paper" && HumanChoice === "Scissors" || ComputerChoice === "Scissors" && HumanChoice === "Rock") {
-            console.log(`You win! ${HumanChoice} beats ${ComputerChoice}!`);
-            humanScore += 1;
-        } else if (ComputerChoice === "Rock" && HumanChoice === "Rock" || ComputerChoice === "Paper" && HumanChoice === "Paper" || ComputerChoice === "Scissors" && HumanChoice === "Scissors") {
-            console.log(`Draw between ${ComputerChoice} and ${HumanChoice}!`) 
-        } else { 
-            console.log(`You lose! ${ComputerChoice} beats ${HumanChoice}!`);
-            computerScore += 1;
-        }
-        console.log("Computer score: " + computerScore + "\n"+ "Human score: " + humanScore);  //Show both the scores 
-    }
-
-
-     playing 5 rounds, including calling the getHumanChoice and getComputerChoice function 5 times!
-     
-    for (i = 0; i < 5; i++) {
-        const computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-    }
-
-  
-     alerting the final result after the 5 rounds
-   
-    if (computerScore > humanScore) {
-        alert(`Sorry, you lose! ${computerScore} is higher than ${humanScore}.`);
-    } else if (humanScore > computerScore)  {
-        alert(`You won! ${humanScore} is higher than ${computerScore}.`);
-    } else {
-        alert(`It's a draw!`);
-    }
-}
-*/
